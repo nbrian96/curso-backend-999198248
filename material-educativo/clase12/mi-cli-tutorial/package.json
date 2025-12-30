@@ -1,0 +1,21 @@
+{
+  "name": "mi-cli-tutorial",
+  "version": "1.0.0",
+  "description": "CLI DEMO",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc"
+  },
+  "keywords": [
+    "CLI",
+    "Typescript"
+  ],
+  "author": "Gonzalez Victor",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
