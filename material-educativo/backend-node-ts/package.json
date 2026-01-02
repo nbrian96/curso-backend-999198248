@@ -12,9 +12,11 @@
   "license": "ISC",
   "description": "Pequeño backend con Node y Typescript",
   "dependencies": {
+    "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "express-handlebars": "^8.0.4",
-    "nodemailer": "^7.0.12"
+    "mailersend": "^2.6.0",
+    "mysql2": "^3.16.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",

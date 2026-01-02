@@ -1,8 +1,10 @@
 import express, { Request, Response } from 'express';
 import path from 'path';
 import { engine } from 'express-handlebars';
+import 'dotenv/config';
 
 // Importar las rutas
+import productsRouter from './routes/products.routes';
 import usersRouter from './routes/users.routes';
 import viewsRouter from './routes/views.routes';
 
@@ -47,6 +49,8 @@ app.get('/api/saludo', (req: Request, res: Response) => {
 });
 
 app.use('/api/users', usersRouter);
+
+app.use('/products', productsRouter);
 
 // Rutas de vistas
 app.use('/handlebars', viewsRouter);
