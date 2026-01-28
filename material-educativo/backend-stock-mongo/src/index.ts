@@ -3,6 +3,8 @@ import path from 'path';
 
 import 'dotenv/config';
 import authRoutes from './routes/auth.routes';
+import categoriesRoutes from './routes/categories.routes';
+import productsRoutes from './routes/product.routes';
 import { authenticate, authorize } from './middlewares/auth.middleware';
 import { connectDB } from './config/database';
 
@@ -39,6 +41,9 @@ app.get('/admin', authenticate, authorize(['admin']), (req, res) => {
 app.get('/api/saludo', (req: Request, res: Response) => {
   res.json({ mensaje: 'Hola desde la API 🚀' });
 });
+
+app.use('/api/categoria', categoriesRoutes);
+app.use('/api/producto', productsRoutes);
 
 // Conectar a MongoDB y luego iniciar el servidor HTTP
 connectDB().then(() => {
