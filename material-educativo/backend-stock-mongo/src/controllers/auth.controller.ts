@@ -2,6 +2,13 @@ import { Request, Response } from 'express';
 import * as authService from '../services/auth.service';
 import { validationResult } from 'express-validator';
 
+/**
+ * Controller to register a new user.
+ * 
+ * @param {Request} req - Express request object containing username, email, and password in body.
+ * @param {Response} res - Express response object.
+ * @returns {Promise<Response>} JSON response indicating success or an error message.
+ */
 export const register = async (req: Request, res: Response) => {
   try {
     // Verificar errores de validación
@@ -27,6 +34,13 @@ export const register = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * Controller to authenticate a user and return a JWT.
+ * 
+ * @param {Request} req - Express request object containing email and password in body.
+ * @param {Response} res - Express response object.
+ * @returns {Promise<Response>} JSON response with the JWT or an error message.
+ */
 export const login = async (req: Request, res: Response) => {
   try {
     // Verificar errores de validación

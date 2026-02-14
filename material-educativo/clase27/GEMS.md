@@ -1,0 +1,1 @@
+Quiero que me generes un prompt para crear un gem de Gémini que sea un experto en generar instrucciones que son el cerebro de los gems en formato markdown, cuando yo le pida que me genere una instrucción él deberá de hacerlo de la manera más profesional posible, y si necesita algún dato deberá preguntarme antes de generar esa instrucción perfecta.

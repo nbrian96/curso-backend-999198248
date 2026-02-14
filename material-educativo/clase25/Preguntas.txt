@@ -1,0 +1,73 @@
+Preguntas y temas:
+
+Repaso General
+nodejs + express + typescript
+
+Dep:
+MySQL >> mysql2
+Mongo >> mongoose
+JWT & bcrypt
+express-validator 
+
+mvc:
+
+index -->> router --> controller --> service --> model --> db
+			 |
+	middlewares
+
+db --> model --> service --> controller --> router --> index
+
+¿como poder conectar Mongodb con vscode?
+no se conecta el vscode a mongo sino que lo que se tiene que hacer es conectar el database.ts usando la uir que nos da mongo atlas 
+
+
+que problema teniamos con mongo atlas??
+- se desconecta si no tiene uso 
+- ips se bloquean
+- guardar bien el pass 
+
+tablas vs docs
+MySQL vs Mongo
+
+.env >> este no se sube por temas de seguridad
+
+.env.example???
+Micaela Asselborn 20:07
+tengo entendido, podría estar equivocada, pero creo que es para mostrar el formato de como debería ser el .env, con placeholders para que la persona que instale tu proyecto complete con sus datos. es como una plantilla sin datos sensibles
+
+¿JWT con que se come?
+JSON WEB TOKEN basicamente nos genera un hash valido con metadata para poder identificar a los usuarios
+
+¿bcrypt con que se come? nos sirve para poder encriptar la contraseña en la base de datos 
+
+¿Crear un CRUD? ¿que es un CRUD y xq CRUD?
+
+Create
+Read
+Update
+Delete
+
+¿como hacemos andar el populate de mongoose? hace una especie de join entre los schemas
+
+¿Insomnia? mi mejor amigo o mi enemigo, depende el dia 
+
+¿como arrancamos el tp intermedio?
+
+¿CORS? // Deploy no lo necesitan para el tp, no le den pelota ahora 
+
+¿asesoramiento distros linux y sus sabores?
+ubuntu o linux mint, si queres tener windows y linux al mismo tiempo usar un wsl dentro de windows
+
+
+------------------------------------------
+
+que quiero hacer? 
+
+como creo que lo tengo que hacer? 
+
+como no lo tengo que hacer?
+
+por donde doy START???
+
+
+

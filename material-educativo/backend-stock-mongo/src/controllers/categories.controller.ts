@@ -4,6 +4,13 @@ import { CreateCategoryDTO, UpdateCategoryDTO } from '../types/categories';
 import { validationResult } from 'express-validator';
 
 // getAll()
+/**
+ * Controller to get all categories.
+ * 
+ * @param {Request} _req - Express request object.
+ * @param {Response} res - Express response object.
+ * @returns {Promise<Response>} JSON response with an array of categories or an error message.
+ */
 export const getAll = async (_req: Request, res: Response) => {
   try {
     const categories = await categoriesService.getAllCategory();
@@ -14,6 +21,13 @@ export const getAll = async (_req: Request, res: Response) => {
 };
 
 // getById()
+/**
+ * Controller to get a category by its ID.
+ * 
+ * @param {Request} req - Express request object containing the category ID in params.
+ * @param {Response} res - Express response object.
+ * @returns {Promise<Response>} JSON response with the category data or an error message.
+ */
 export const getById = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
@@ -30,15 +44,18 @@ export const getById = async (req: Request, res: Response) => {
 };
 
 // create()
+/**
+ * Controller to create a new category.
+ * 
+ * @param {Request} req - Express request object containing category data in body.
+ * @param {Response} res - Express response object.
+ * @returns {Promise<Response>} JSON response with the created category or an error message.
+ */
 export const create = async (req: Request, res: Response) => {
   try {
-    const errors = validationResult(req);
-    console.log('Errores de validación:', errors.array());
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-
     const categoryData: CreateCategoryDTO = req.body;
+
+    console.log('categoryData', categoryData);
 
     console.log('Datos recibidos para crear categoría:', categoryData);
 
@@ -50,14 +67,16 @@ export const create = async (req: Request, res: Response) => {
 };
 
 // update()
+/**
+ * Controller to update an existing category.
+ * 
+ * @param {Request} req - Express request object containing the category ID in params and updated data in body.
+ * @param {Response} res - Express response object.
+ * @returns {Promise<Response>} JSON response with the updated category or an error message.
+ */
 export const update = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
 
     const categoryData: UpdateCategoryDTO = req.body;
     const updatedCategory = await categoriesService.updateCategory(
@@ -84,6 +103,13 @@ export const update = async (req: Request, res: Response) => {
 };
 
 // remove ()
+/**
+ * Controller to delete a category.
+ * 
+ * @param {Request} req - Express request object containing the category ID in params.
+ * @param {Response} res - Express response object.
+ * @returns {Promise<Response>} JSON response indicating success or an error message.
+ */
 export const remove = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;

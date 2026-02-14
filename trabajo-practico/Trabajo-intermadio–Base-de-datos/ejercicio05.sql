@@ -5,6 +5,8 @@ CREATE TABLE historial_clinico (
     id_veterinario INT NOT NULL,
     fecha_registro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     descripcion TEXT NOT NULL,
+    activo TINYINT(1) DEFAULT 1,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     CONSTRAINT fk_historial_mascota
         FOREIGN KEY (id_mascota) REFERENCES mascotas(id)
         ON DELETE CASCADE,

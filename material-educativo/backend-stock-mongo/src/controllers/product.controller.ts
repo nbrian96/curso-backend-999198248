@@ -2,6 +2,13 @@ import { Request, Response } from 'express';
 import * as productService from '../services/product.service';
 import { IProduct, Product } from '../models/products.model';
 
+/**
+ * Controller to create a new product.
+ * 
+ * @param {Request} req - Express request object containing product data in body.
+ * @param {Response} res - Express response object.
+ * @returns {Promise<Response>} JSON response with the created product or an error message.
+ */
 export const createProduct = async (req: Request, res: Response) => {
   try {
     console.log('createProduct');
@@ -23,6 +30,13 @@ export const createProduct = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * Controller to get all products.
+ * 
+ * @param {Request} req - Express request object.
+ * @param {Response} res - Express response object.
+ * @returns {Promise<Response>} JSON response with an array of products or an error message.
+ */
 export const getAllProducts = async (req: Request, res: Response) => {
   try {
     console.log('getAllProducts');
@@ -35,6 +49,13 @@ export const getAllProducts = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * Controller to get a product by its ID.
+ * 
+ * @param {Request} req - Express request object containing the product ID in params.
+ * @param {Response} res - Express response object.
+ * @returns {Promise<Response>} JSON response with the product data or an error message.
+ */
 export const getProductById = async (req: Request, res: Response) => {
   const id = req.params.id;
   try {
@@ -55,6 +76,13 @@ export const getProductById = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * Controller to update an existing product.
+ * 
+ * @param {Request} req - Express request object containing the product ID in params and updated data in body.
+ * @param {Response} res - Express response object.
+ * @returns {Promise<Response>} JSON response with the updated product or an error message.
+ */
 export const updateProduct = async (req: Request, res: Response) => {
   const id = req.params.id;
 
@@ -79,6 +107,13 @@ export const updateProduct = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * Controller to delete a product.
+ * 
+ * @param {Request} req - Express request object containing the product ID in params.
+ * @param {Response} res - Express response object.
+ * @returns {Promise<Response>} JSON response indicating success or an error message.
+ */
 export const deleteProduct = async (req: Request, res: Response) => {
   const id = req.params.id;
 

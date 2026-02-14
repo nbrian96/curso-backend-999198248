@@ -1,13 +1,25 @@
-import { populate } from 'dotenv';
 import mongoose, { Schema, Document } from 'mongoose';
 
+/**
+ * Interface representing a Product document in MongoDB.
+ * 
+ * @interface IProduct
+ * @extends {Document}
+ */
 export interface IProduct extends Document {
+  /** The name of the product */
   name: string;
-  description?: string; // ? Campo opcional
+  /** An optional description of the product */
+  description?: string;
+  /** The price of the product */
   price: number;
+  /** The current stock level of the product */
   stock: number;
+  /** Reference to the category this product belongs to */
   categoryId: mongoose.Types.ObjectId;
+  /** The date the product was created */
   createdAt?: Date;
+  /** The date the product was last updated */
   updatedAt?: Date;
 }
 
